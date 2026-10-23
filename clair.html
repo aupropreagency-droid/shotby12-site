@@ -86,6 +86,8 @@ html{scroll-behavior:smooth}
 h2.title-reveal{font-size:44px !important}
 #pov h2.title-reveal{font-size:64px !important}
 .contact-big{font-size:54px !important}
+#wa-form{grid-template-columns:minmax(0,1fr) !important;padding:20px !important}
+#wa-form label{grid-column:1 / -1 !important}
 .m-ticker > div{font-size:22px !important;gap:24px !important;padding-right:24px !important}
 .pov-grid{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
 .pov-grid span{font-size:11px !important}
@@ -115,6 +117,14 @@ h2.title-reveal{font-size:44px !important}
 .about-intro{view-timeline-name:--about}
 .about-intro .w{animation:wordOn linear both;animation-timeline:--about}
 }
+.wa-send{transition:transform .2s ease,box-shadow .2s ease}
+.wa-send:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(37,211,102,0.45) !important}
+.wa-float{transition:transform .2s ease}
+a.wa-float,a.wa-float:hover{color:#06210F !important}
+.wa-float:hover{transform:translateY(-2px)}
+@keyframes waIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.wa-float{animation:waIn .4s ease both}
+#wa-form input:focus,#wa-form select:focus,#wa-form textarea:focus{outline:2px solid #25D366;outline-offset:1px}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
 </style>
 </helmet>
@@ -413,10 +423,29 @@ Voir les stories
 <footer style="font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5E5A52">[Nom du client] — [Organisation]</footer>
 </blockquote>
 <p style="margin: 0 0 16px; font-size: 18px; color: #3A3A3A">Des contenus pensés pour valoriser ton image. Envie de collaborer ?</p>
-<a href="mailto:shotbyytwelve12@gmail.com" class="title-reveal contact-big" style="display: block; text-decoration: none; font-family: 'Anton', sans-serif; font-size: clamp(64px, 11vw, 170px); line-height: 0.88; text-transform: uppercase">Je couvre<br>ton event ? <span style="color: {{accent}}">↗</span></a>
-<div style="display: flex; flex-wrap: wrap; gap: 12px 40px; margin-top: 36px; font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase">
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h2 class="title-reveal contact-big" style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(56px, 7.5vw, 120px); line-height: 0.9; text-transform: uppercase">Je couvre<br>ton event ?</h2>
+<p style="margin: 0; max-width: 440px; font-size: 17px; color: #3A3A3A">Remplis ces quelques infos : ta demande s'ouvre dans WhatsApp, prête à m'être envoyée. Je te réponds directement là-bas.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5E5A52">
+<span style="min-height: 44px; display: inline-flex; align-items: center">Ou :</span>
 <a href="mailto:shotbyytwelve12@gmail.com" style="min-height: 44px; display: inline-flex; align-items: center">shotbyytwelve12@gmail.com</a>
 <a href="https://www.instagram.com/shotbyy12" style="min-height: 44px; display: inline-flex; align-items: center">Instagram @shotbyy12</a>
+</div>
+</div>
+<form id="wa-form" onSubmit="{{sendWa}}" class="reveal" style="flex: 1 1 420px; min-width: 0; max-width: 560px; box-sizing: border-box; padding: 28px; border-radius: 24px; background: #FAF8F4; border: 1px solid rgba(18,18,18,0.12); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+<label for="wa-type" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Type d’événement<select id="wa-type" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"><option value="">Choisir…</option><option>Tournoi</option><option>Match</option><option>Course</option><option>Soirée / lifestyle</option><option>Lancement de marque</option><option>Autre</option></select></label>
+<label for="wa-date" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Date<input id="wa-date" type="date" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-duree" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Durée<select id="wa-duree" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"><option value="">Choisir…</option><option>Quelques heures</option><option>Une journée</option><option>Plusieurs jours</option></select></label>
+<label for="wa-lieu" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Lieu<input id="wa-lieu" type="text" placeholder="Ex. Paris 18e, Clichy Hall" autocomplete="address-level2" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-nom" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Ton nom / organisation<input id="wa-nom" type="text" placeholder="Ex. Club de Charenton" autocomplete="organization" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-msg" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Ton projet en quelques mots<textarea id="wa-msg" rows="3" placeholder="Ce que tu imagines, tes partenaires à mettre en avant…" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light; padding: 12px 14px; resize: vertical"></textarea></label>
+<sc-if value="{{waErr}}" hint-placeholder-val="{{false}}">
+<p role="alert" style="grid-column: 1 / -1; margin: -4px 0 0; font-size: 14px; color: #FF8A80">Choisis au moins le type d’événement ou décris ton projet.</p>
+</sc-if>
+<button type="submit" class="wa-send" style="grid-column: 1 / -1; font: inherit; cursor: pointer; border: none; border-radius: 999px; min-height: 56px; background: #25D366; color: #06210F; font-weight: 700; font-size: 17px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 14px 30px rgba(37,211,102,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>Envoyer sur WhatsApp</button>
+<span style="grid-column: 1 / -1; font-size: 13px; color: #5E5A52; text-align: center">Ça ouvre WhatsApp avec ton message déjà rédigé : il ne reste qu’à appuyer sur Envoyer.</span>
+</form>
 </div>
 </div>
 </section>
@@ -428,6 +457,9 @@ Voir les stories
 </div>
 </footer>
 
+<sc-if value="{{waFloat}}" hint-placeholder-val="{{true}}">
+<a href="#contact" class="wa-float" aria-label="Demander un devis sur WhatsApp" style="position: fixed; right: 16px; bottom: 16px; z-index: 40; display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 20px 0 16px; border-radius: 999px; background: #25D366; color: #06210F; font-weight: 700; font-size: 15px; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>Devis WhatsApp</a>
+</sc-if>
 <!-- LECTEUR PLEIN ÉCRAN (mur et formats) -->
 <sc-if value="{{modalOpen}}" hint-placeholder-val="{{false}}">
 <div role="dialog" aria-modal="true" aria-label="Stories {{current.name}}" style="position: fixed; inset: 0; z-index: 50; background: rgba(18,18,18,0.9); color: #FFFFFF; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box">
@@ -481,7 +513,7 @@ Voir les stories
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { ev: 3, st: 0, p: 0, paused: false, rx: 0, ry: 0, modal: false, muted: true, povSound: -1, uf: '', igPick: -1, hw: -1, hs: 0, hp: 0, wrx: 0, wry: 0, ft: -1 };
+this.state = { ev: 3, st: 0, p: 0, paused: false, rx: 0, ry: 0, modal: false, muted: true, povSound: -1, uf: '', igPick: -1, waErr: false, waFloat: true, hw: -1, hs: 0, hp: 0, wrx: 0, wry: 0, ft: -1 };
 this.COUNT = 3;
 this.VID = { 2: ['media/reprise-1.mp4', 'media/reprise-2.mp4', 'media/reprise-3.mp4', 'media/reprise-4.mp4', 'media/reprise-5.mp4'], 4: ['media/apg-1.mp4', 'media/apg-2.mp4', 'media/apg-3.mp4', 'media/apg-4.mp4', 'media/apg-5.mp4'], 3: ['media/arc04-1.mp4', 'media/arc04-2.mp4', 'media/arc04-3.mp4', 'media/arc04-4.mp4', 'media/arc04-5.mp4', 'media/arc04-6.mp4', 'media/arc04-7.mp4', 'media/arc04-8.mp4'] };
 this.ICO = { 2: 'media/ico-reprise.jpg', 3: 'media/ico-bananacut.jpg', 8: 'media/ico-bananacut.jpg', 4: 'media/ico-apg.jpg', 6: 'media/ico-jemh.jpg', 10: 'media/ico-parisbasket.jpg', 12: 'media/ico-unlocked.jpg' };
@@ -492,6 +524,7 @@ this.ticking = false;
 this.onScroll = this.onScroll.bind(this);
 }
 componentDidMount() {
+if (typeof IntersectionObserver !== 'undefined') { const c = document.getElementById('contact'); if (c) { this.waIO = new IntersectionObserver((en) => { const vis = en[0].isIntersecting; if (vis === this.state.waFloat) this.setState({ waFloat: !vis }); }, { threshold: 0.15 }); this.waIO.observe(c); } }
 this.reduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 this.timer = setInterval(() => {
 if (typeof document !== 'undefined' && document.hidden) return;
@@ -526,6 +559,7 @@ else if (v.paused && !v.ended) { const pr = v.play(); if (pr && pr.catch) pr.cat
 componentWillUnmount() {
 clearInterval(this.timer);
 clearTimeout(this.igTimer);
+if (this.waIO) this.waIO.disconnect();
 if (this.scroller) this.scroller.removeEventListener('scroll', this.onScroll);
 }
 onScroll() {
@@ -617,6 +651,24 @@ const vidTime = (e) => { const v = e.currentTarget; if (v.duration) this.setStat
 const vidEnd = () => this.advance();
 const wallTime = (e) => { const v = e.currentTarget; if (v.duration) this.setState({ hp: Math.min(100, (v.currentTime / v.duration) * 100) }); };
 const wallEnd = () => { const h = this.state.hw; if (h >= 0) this.setState({ hs: (this.state.hs + 1) % this.cnt(h), hp: 0 }); };
+const sendWa = (e) => {
+if (e && e.preventDefault) e.preventDefault();
+const g = (id) => { const el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; };
+const type = g('wa-type'), date = g('wa-date'), duree = g('wa-duree'), lieu = g('wa-lieu'), nom = g('wa-nom'), msg = g('wa-msg');
+if (!type && !msg) { this.setState({ waErr: true }); return; }
+let d = date; if (/^\d{4}-\d{2}-\d{2}$/.test(date)) { const p = date.split('-'); d = p[2] + '/' + p[1] + '/' + p[0]; }
+const lines = ['Salut SHOTBY12 ! Nouvelle demande via ton site :', ''];
+if (type) lines.push('• Événement : ' + type);
+if (d) lines.push('• Date : ' + d);
+if (duree) lines.push('• Durée : ' + duree);
+if (lieu) lines.push('• Lieu : ' + lieu);
+if (nom) lines.push('• Organisateur : ' + nom);
+if (msg) { lines.push(''); lines.push(msg); }
+const url = 'https://wa.me/33659793587?text=' + encodeURIComponent(lines.join('\n'));
+this.setState({ waErr: false });
+const w = window.open(url, '_blank');
+if (w) { try { w.opener = null; } catch (err) {} } else { window.location.href = url; }
+};
 const toggleSound = () => this.setState({ muted: !this.state.muted, povSound: -1 });
 const povData = [
 { ep: 'EP. 01', title: 'Bananacut Arc 04', src: 'media/pov-arc04.mp4', poster: 'media/pov-arc04.jpg' },
@@ -731,6 +783,9 @@ wallVidSrc: hw >= 0 && this.VID[hw] ? this.VID[hw][this.state.hs % this.VID[hw].
 wallTime: wallTime,
 wallEnd: wallEnd,
 toggleSound: toggleSound,
+sendWa: sendWa,
+waErr: this.state.waErr,
+waFloat: this.state.waFloat && !this.state.modal,
 povReels: povReels,
 isMuted: this.state.muted,
 isSound: !this.state.muted,

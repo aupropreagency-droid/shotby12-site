@@ -16,8 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;700&amp;display=swap">
 <style>
-body{margin:0;background:#0A0A0A}
-a{color:#FFFFFF}a:hover{color:#C9C9C9}
+body{margin:0;background:#F2EEE6}
+a{color:#121212}a:hover{color:#1F17E0}
+#pov a{color:#F2EEE6}#pov a:hover{color:#FFFFFF}
 html{scroll-behavior:smooth}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .ticker-track{display:flex;width:max-content;animation:marquee 70s linear infinite}
@@ -54,10 +55,10 @@ html{scroll-behavior:smooth}
 .cta-main:hover .cta-arrow{transform:translateX(5px)}
 .hl-ring{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
 .hl-item:hover .hl-ring,.hl-item:focus-visible .hl-ring{transform:scale(1.08)}
-.wall-card:hover,.wall-card:focus-visible{border-color:#FFFFFF;box-shadow:0 30px 70px rgba(31,23,224,0.5)}
+.wall-card:hover,.wall-card:focus-visible{border-color:#1F17E0;box-shadow:0 30px 60px rgba(31,23,224,0.35)}
 .wall-grid:hover .wall-card:not(:hover){opacity:.6}
 .ft-chip{transition:background .2s ease,border-color .2s ease,color .2s ease}
-.ft-chip:hover{border-color:#FFFFFF !important;color:#FFFFFF !important}
+.ft-chip[aria-pressed="false"]:hover{border-color:#121212 !important;color:#121212 !important}
 @supports (animation-timeline: view()){
 @keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes titleReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -67,7 +68,7 @@ html{scroll-behavior:smooth}
 .feat-thumb{display:none}
 @media (max-width: 760px){
 .scrolly-wrap{display:block !important}
-.scrolly-phone{position:sticky !important;top:0 !important;z-index:5;width:auto !important;max-width:none !important;margin:0 -16px;padding:10px 16px 28px;background:linear-gradient(180deg,#0A0A0A 82%,rgba(10,10,10,0) 100%)}
+.scrolly-phone{position:sticky !important;top:0 !important;z-index:5;width:auto !important;max-width:none !important;margin:0 -16px;padding:10px 16px 28px;background:linear-gradient(180deg,#F2EEE6 82%,rgba(242,238,230,0) 100%)}
 .scrolly-phone .phone-float{width:min(46vw,200px);margin:0 auto}
 .scrolly-phone .phone-hint{display:none}
 .feat-block{min-height:460px !important;padding:24px 0}
@@ -128,37 +129,37 @@ a.wa-float,a.wa-float:hover{color:#06210F !important}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
 </style>
 </helmet>
-<div style="width: 100%; background: #0A0A0A; color: #FFFFFF; font-family: 'Archivo', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
+<div style="width: 100%; background: #F2EEE6; color: #121212; font-family: 'Archivo', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
 
 <!-- NAV -->
-<header style="border-bottom: 1px solid rgba(255,255,255,0.1)">
+<header style="border-bottom: 1px solid rgba(18,18,18,0.12)">
 <nav style="max-width: 1240px; margin: 0 auto; padding: 14px clamp(16px, 3vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px">
-<a href="#top" style="display: flex; align-items: center; text-decoration: none" aria-label="SHOTBY12 — Accueil"><img src="media/shotby12-logo-dark.png" alt="SHOTBY12" style="display: block; height: 62px; width: auto"></a>
+<a href="#top" style="display: flex; align-items: center; text-decoration: none" aria-label="SHOTBY12 — Accueil"><img src="media/shotby12-logo-light.png" alt="SHOTBY12" style="display: block; height: 62px; width: auto"></a>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase">
 <a href="#evenements" class="nav-sec" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Événements</a>
 <a href="#tous" class="nav-sec" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Du sport à la culture</a>
 <a href="#pov" class="nav-sec" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">12's POV</a>
 <a href="#offre" class="nav-sec" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Offre</a>
-<a href="#contact" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; background: {{accent}}; font-weight: 700">Me contacter</a>
+<a href="#contact" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-weight: 700">Me contacter</a>
 </div>
 </nav>
 </header>
 
 <!-- HERO -->
 <section id="top" class="sec-in hero-sec" style="max-width: 1240px; margin: 0 auto; padding: 80px clamp(16px, 3vw, 40px) 72px; display: flex; flex-direction: column; gap: 28px">
-<p style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #B5B5B5">SHOTBY12 — Création de contenu sportif et digital</p>
-<h1 class="hero-title" style="margin: 0; max-width: 1100px; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(60px, 9vw, 140px); line-height: 0.88; text-transform: uppercase">Je raconte ton evenement en stories.</h1>
+<p style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #5E5A52">SHOTBY12 — Création de contenu sportif et digital</p>
+<h1 class="hero-title" style="color: {{accent}}; margin: 0; max-width: 1100px; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(60px, 9vw, 140px); line-height: 0.88; text-transform: uppercase">Je raconte ton evenement en stories.</h1>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 48px">
-<p style="margin: 0; max-width: 520px; font-size: 19px; color: #D0D0D0">Passionné par le sport, la vidéo et les réseaux sociaux, je crée du contenu qui raconte des histoires et met en valeur les acteurs du terrain. Tournois, matchs, soirées, rencontres : je filme sur place et je publie en direct.</p>
+<p style="margin: 0; max-width: 520px; font-size: 19px; color: #3A3A3A">Passionné par le sport, la vidéo et les réseaux sociaux, je crée du contenu qui raconte des histoires et met en valeur les acteurs du terrain. Tournois, matchs, soirées, rencontres : je filme sur place et je publie en direct.</p>
 <div class="hero-ctas" style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#offre" class="cta-main" style="text-decoration: none; background: {{accent}}; color: #FFFFFF; font-weight: 700; font-size: 17px; padding: 0 28px; min-height: 56px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 14px 34px rgba(31,23,224,0.35)">Couvrir mon événement <span class="cta-arrow" aria-hidden="true">→</span></a>
-<a href="#evenements" style="text-decoration: none; border: 1.5px solid rgba(255,255,255,0.5); font-weight: 600; font-size: 15px; padding: 0 20px; min-height: 48px; border-radius: 999px; display: inline-flex; align-items: center; box-sizing: border-box">Voir mes stories ↓</a>
+<a href="#evenements" style="text-decoration: none; border: 1.5px solid #121212; font-weight: 600; font-size: 15px; padding: 0 20px; min-height: 48px; border-radius: 999px; display: inline-flex; align-items: center; box-sizing: border-box">Voir mes stories ↓</a>
 </div>
 </div>
 </section>
 
 <!-- BANDEAU DÉFILANT -->
-<section class="ticker" aria-label="Univers et références" style="border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); overflow: hidden; padding: 20px 0">
+<section class="ticker" aria-label="Univers et références" style="border-top: 1px solid rgba(18,18,18,0.12); border-bottom: 1px solid rgba(18,18,18,0.12); overflow: hidden; padding: 20px 0">
 <div class="ticker-track m-ticker">
 <div style="display: flex; align-items: center; gap: 36px; padding-right: 36px; white-space: nowrap; font-family: 'Anton', sans-serif; font-size: 30px; text-transform: uppercase">
 <sc-for list="{{ticker}}" as="t" hint-placeholder-count="14">
@@ -177,14 +178,14 @@ a.wa-float,a.wa-float:hover{color:#06210F !important}
 <section id="evenements">
 <div class="sec-in" style="max-width: 1240px; margin: 0 auto; padding: 96px clamp(16px, 3vw, 40px) 40px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px; margin-bottom: 24px">
-<h2 class="title-reveal" style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(48px, 7vw, 100px); line-height: 0.9; text-transform: uppercase">Sur le terrain</h2>
-<p style="margin: 0; max-width: 400px; font-size: 17px; color: #C9C9C9">Fais défiler : chaque événement se lance dans le téléphone.</p>
+<h2 class="title-reveal" style="color: {{accent}}; margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(48px, 7vw, 100px); line-height: 0.9; text-transform: uppercase">Sur le terrain</h2>
+<p style="margin: 0; max-width: 400px; font-size: 17px; color: #3A3A3A">Fais défiler : chaque événement se lance dans le téléphone.</p>
 </div>
 <div class="scrolly-wrap" style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start">
 
 <div id="lecteur" class="scrolly-phone" style="order: 2; flex: 0 1 360px; min-width: 0; position: sticky; top: 90px; display: flex; flex-direction: column; gap: 14px">
 <div class="phone-float">
-<div onMouseMove="{{tilt}}" onMouseLeave="{{untilt}}" style="position: relative; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: {{current.bg}}; border: 3px solid #222226; transform: {{phoneTransform}}; box-shadow: {{phoneShadow}}; transition: transform .2s ease-out, box-shadow .2s ease-out, background .4s ease">
+<div onMouseMove="{{tilt}}" onMouseLeave="{{untilt}}" style="color: #FFFFFF; position: relative; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: {{current.bg}}; border: 3px solid #222226; transform: {{phoneTransform}}; box-shadow: {{phoneShadow}}; transition: transform .2s ease-out, box-shadow .2s ease-out, background .4s ease">
 <sc-if value="{{phoneVid}}" hint-placeholder-val="{{false}}">
 <video data-sb-vid="main" src="{{vidSrc}}" poster="{{vidPoster}}" autoPlay="{{true}}" muted="{{true}}" playsInline="{{true}}" preload="auto" onTimeUpdate="{{vidTime}}" onEnded="{{vidEnd}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></video>
 <span aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 96px; background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0)); z-index: 1; pointer-events: none"></span>
@@ -225,12 +226,12 @@ a.wa-float,a.wa-float:hover{color:#06210F !important}
 <button type="button" aria-label="Story suivante" onClick="{{next}}" onPointerDown="{{hold}}" onPointerUp="{{release}}" onPointerLeave="{{release}}" style="position: absolute; right: 0; top: 0; bottom: 0; width: 65%; background: none; border: none; cursor: pointer; z-index: 1"></button>
 </div>
 </div>
-<p class="phone-hint" style="margin: 0; text-align: center; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #9A9A9A">{{hint}}</p>
+<p class="phone-hint" style="margin: 0; text-align: center; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5E5A52">{{hint}}</p>
 </div>
 
 <div style="order: 1; flex: 1 1 440px; min-width: 0">
 <sc-for list="{{featured}}" as="f" hint-placeholder-count="6">
-<div class="feat-block" data-feat="{{f.ev}}" style="min-height: 560px; display: flex; flex-direction: column; justify-content: center; gap: 14px; border-top: 1px solid rgba(255,255,255,0.12); color: {{f.color}}; transition: color .35s ease">
+<div class="feat-block" data-feat="{{f.ev}}" style="min-height: 560px; display: flex; flex-direction: column; justify-content: center; gap: 14px; border-top: 1px solid rgba(18,18,18,0.12); color: {{f.color}}; transition: color .35s ease">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em">{{f.num}} — {{f.univers}}</span>
 <h3 style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(44px, 6vw, 84px); line-height: 0.92; text-transform: uppercase">{{f.name}}</h3>
 <span class="feat-sub" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{f.subColor}}">{{f.sub}}</span>
@@ -252,19 +253,19 @@ Voir les stories
 </section>
 
 <!-- 12'S POV -->
-<section id="pov" style="background: {{accent}}">
+<section id="pov" style="background: #0E0E10; color: #F2EEE6">
 <div class="sec-in" style="max-width: 1240px; margin: 0 auto; padding: 96px clamp(16px, 3vw, 40px)">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 48px; margin-bottom: 44px">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">Mon format perso</span>
-<h2 class="title-reveal" style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(72px, 10vw, 150px); line-height: 0.85; text-transform: uppercase">12'S POV</h2>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #B9B5AC">Mon format perso</span>
+<h2 class="title-reveal" style="color: #FFFFFF; margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(72px, 10vw, 150px); line-height: 0.85; text-transform: uppercase">12'S POV</h2>
 </div>
 <p style="margin: 0; max-width: 440px; font-size: 18px">Le concept dans lequel je filme les journées d'événements en tant que social media manager. C'est là que je teste, que je m'amuse, et que tu vois le regard que j'apporterai à tes contenus.</p>
 </div>
 <div class="pov-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
 <sc-for list="{{povReels}}" as="r" hint-placeholder-count="2">
 <div class="reveal" style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<div style="background: #0A0A0A; position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.35)">
+<div style="background: {{accent}}; position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.35)">
 <video data-sb-pov="{{r.i}}" src="{{r.src}}" poster="{{r.poster}}" autoPlay="{{true}}" muted="{{true}}" loop="{{true}}" playsInline="{{true}}" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
 <span style="position: absolute; left: 14px; top: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; background: rgba(0,0,0,0.55); color: #FFFFFF">{{r.ep}}</span>
 <button type="button" onClick="{{r.toggle}}" aria-label="{{r.label}}" style="position: absolute; right: 12px; bottom: 12px; width: 44px; height: 44px; border-radius: 999px; border: none; background: rgba(0,0,0,0.55); color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center">
@@ -283,26 +284,26 @@ Voir les stories
 </section>
 
 <!-- AUSSI SUR LE TERRAIN : stories à la une -->
-<section id="tous" style="border-top: 1px solid rgba(255,255,255,0.12)">
+<section id="tous" style="border-top: 1px solid rgba(18,18,18,0.12)">
 <div class="sec-in" style="max-width: 1240px; margin: 0 auto; padding: 88px clamp(16px, 3vw, 40px)">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px; margin-bottom: 20px">
-<h2 class="title-reveal" style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(44px, 6vw, 84px); line-height: 0.92; text-transform: uppercase">Du sport à la culture <span style="color: {{accentText}}">({{eventCount}})</span></h2>
-<p style="margin: 0; max-width: 400px; font-size: 17px; color: #C9C9C9">Tournois, matchs pro, courses, gaming, lifestyle, culture : chaque événement a sa story à la une sur mon Instagram.</p>
+<h2 class="title-reveal" style="color: {{accent}}; margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(44px, 6vw, 84px); line-height: 0.92; text-transform: uppercase">Du sport à la culture <span style="color: {{accentText}}">({{eventCount}})</span></h2>
+<p style="margin: 0; max-width: 400px; font-size: 17px; color: #3A3A3A">Tournois, matchs pro, courses, gaming, lifestyle, culture : chaque événement a sa story à la une sur mon Instagram.</p>
 </div>
 <div role="group" aria-label="Filtrer par univers" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px">
 <sc-for list="{{uniTags}}" as="u" hint-placeholder-count="8">
 <button type="button" class="ft-chip" onClick="{{u.pick}}" aria-pressed="{{u.on}}" style="font: inherit; cursor: pointer; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid {{u.border}}; background: {{u.bg}}; color: {{u.color}}">{{u.label}}</button>
 </sc-for>
 </div>
-<p aria-live="polite" style="margin: 0 0 36px; font-size: 14px; color: #9A9A9A">{{uniInfo}}</p>
+<p aria-live="polite" style="margin: 0 0 36px; font-size: 14px; color: #5E5A52">{{uniInfo}}</p>
 <div class="hl-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 28px 16px">
 <sc-for list="{{highlights}}" as="h" hint-placeholder-count="15">
 <button type="button" class="hl-item" onClick="{{h.go}}" aria-label="{{h.label}}" style="background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; opacity: {{h.op}}; filter: {{h.filt}}; transform: {{h.tr}}; transition: opacity .4s ease, filter .4s ease, transform .45s cubic-bezier(.2,.7,.2,1); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; min-width: 0">
 <span class="hl-ring" style="position: relative; width: 88px; height: 88px; border-radius: 999px; padding: 3px; box-sizing: border-box; background: {{h.ringBg}}; display: block">
 <sc-if value="{{h.isFeat}}" hint-placeholder-val="{{false}}">
-<span aria-hidden="true" style="position: absolute; right: -2px; bottom: -2px; z-index: 2; width: 26px; height: 26px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; border: 2px solid #0A0A0A; display: flex; align-items: center; justify-content: center; padding-left: 2px; box-sizing: border-box"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg></span>
+<span aria-hidden="true" style="position: absolute; right: -2px; bottom: -2px; z-index: 2; width: 26px; height: 26px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; border: 2px solid #F2EEE6; display: flex; align-items: center; justify-content: center; padding-left: 2px; box-sizing: border-box"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg></span>
 </sc-if>
-<span style="background: #0A0A0A; padding: 3px; width: 100%; height: 100%; box-sizing: border-box; border-radius: 999px; display: block">
+<span style="background: #F2EEE6; padding: 3px; width: 100%; height: 100%; box-sizing: border-box; border-radius: 999px; display: block">
 <span style="position: relative; width: 100%; height: 100%; border-radius: 999px; overflow: hidden; background: {{h.bg}}; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Anton', sans-serif; font-size: 12px; line-height: 1.05; text-transform: uppercase; text-align: center; overflow-wrap: anywhere; padding: 8px; box-sizing: border-box">
 <sc-if value="{{h.hasPoster}}" hint-placeholder-val="{{false}}">
 <img src="{{h.poster}}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{h.imgFit}}; object-position: center; transform: {{h.imgScale}}">
@@ -323,7 +324,7 @@ Voir les stories
 <a href="https://www.instagram.com/shotbyy12" class="ig-cta {{igCls}}" style="text-decoration: none; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; font-weight: 700; font-size: 17px">
 <span class="ig-av" style="position: relative; width: 52px; height: 52px; flex: 0 0 52px; border-radius: 999px; display: block">
 <span class="ig-ring" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 999px; background: conic-gradient(from 0deg, {{accent}}, #7C8CFF, #FFFFFF, {{accent}})"></span>
-<span style="position: absolute; inset: 3px; border-radius: 999px; background: #0A0A0A; padding: 3px; box-sizing: border-box; display: block">
+<span style="position: absolute; inset: 3px; border-radius: 999px; background: #F2EEE6; padding: 3px; box-sizing: border-box; display: block">
 <span style="width: 100%; height: 100%; border-radius: 999px; background: {{accent}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Anton', sans-serif; font-size: 15px; line-height: 1">12</span>
 </span>
 </span>
@@ -331,23 +332,23 @@ Voir les stories
 <span class="ig-arrow" aria-hidden="true">→</span>
 </a>
 <sc-if value="{{igHint}}" hint-placeholder-val="{{false}}">
-<span class="ig-hint" aria-live="polite" style="font-size: 14px; color: #C9C9C9">{{igHintText}}</span>
+<span class="ig-hint" aria-live="polite" style="font-size: 14px; color: #3A3A3A">{{igHintText}}</span>
 </sc-if>
 </div>
 </div>
 </section>
 
 <!-- À PROPOS -->
-<section id="apropos" style="border-bottom: 1px solid rgba(255,255,255,0.12)">
+<section id="apropos" style="border-bottom: 1px solid rgba(18,18,18,0.12)">
 <div class="sec-in" style="max-width: 1240px; margin: 0 auto; padding: 96px clamp(16px, 3vw, 40px); display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
-<div class="about-photo photo-reveal" style="position: relative; flex: 1 1 280px; min-width: 0; max-width: 360px; aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: #1A1A1E">
+<div class="about-photo photo-reveal" style="position: relative; flex: 1 1 280px; min-width: 0; max-width: 360px; aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: #D9D3C7">
 <img src="media/photo-apropos.jpg" alt="SHOTBY12 sur le terrain, ballon en main" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top">
 </div>
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-<h2 class="title-reveal" style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(48px, 7vw, 100px); line-height: 0.9; text-transform: uppercase">Qui suis-je ?</h2>
+<h2 class="title-reveal" style="color: {{accent}}; margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(48px, 7vw, 100px); line-height: 0.9; text-transform: uppercase">Qui suis-je ?</h2>
 <p class="about-intro" style="margin: 0; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.35; font-weight: 500">Joueur de basket depuis plusieurs années, j'ai naturellement développé un intérêt pour l'univers sportif et tout ce qui l'entoure.</p>
-<p style="margin: 0; font-size: 17px; color: #C9C9C9">À travers SHOTBY12, je développe mon activité de vidéaste et de social media manager. Mon objectif est simple : capturer les moments forts, raconter des histoires et créer des contenus qui donnent envie de suivre et de vivre chaque événement.</p>
-<p style="margin: 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 16px; color: #C9C9C9">Mes références : <strong style="font-weight: 700; color: inherit">UncleBabs &amp; Samzeg</strong>, pour leur travail avec <span style="color: {{accentText}}; font-weight: 700">Paris Basketball</span>.</p>
+<p style="margin: 0; font-size: 17px; color: #3A3A3A">À travers SHOTBY12, je développe mon activité de vidéaste et de social media manager. Mon objectif est simple : capturer les moments forts, raconter des histoires et créer des contenus qui donnent envie de suivre et de vivre chaque événement.</p>
+<p style="margin: 0; padding-top: 22px; border-top: 1px solid rgba(18,18,18,0.12); font-size: 16px; color: #3A3A3A">Mes références : <strong style="font-weight: 700; color: inherit">UncleBabs &amp; Samzeg</strong>, pour leur travail avec <span style="color: {{accentText}}; font-weight: 700">Paris Basketball</span>.</p>
 </div>
 </div>
 </section>
@@ -355,9 +356,9 @@ Voir les stories
 <!-- TRAVAILLER ENSEMBLE : l'offre -->
 <section id="offre">
 <div class="sec-in" style="max-width: 1240px; margin: 0 auto; padding: 96px clamp(16px, 3vw, 40px) 48px">
-<span style="display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C9C9C9; margin-bottom: 14px">Travailler ensemble</span>
-<h2 class="title-reveal" style="margin: 0 0 16px; max-width: 900px; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(44px, 6vw, 84px); line-height: 0.95; text-transform: uppercase">La couverture stories de ton événement</h2>
-<p style="margin: 0 0 56px; max-width: 620px; font-size: 18px; color: #C9C9C9">Je couvre ton événement en stories, en direct et à tes couleurs. Choisis 4 h ou 8 h pour une couverture classique, ou demande un format sur mesure pour un événement qui sort de ces durées.</p>
+<span style="display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #3A3A3A; margin-bottom: 14px">Travailler ensemble</span>
+<h2 class="title-reveal" style="color: {{accent}}; margin: 0 0 16px; max-width: 900px; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(44px, 6vw, 84px); line-height: 0.95; text-transform: uppercase">La couverture stories de ton événement</h2>
+<p style="margin: 0 0 56px; max-width: 620px; font-size: 18px; color: #3A3A3A">Je couvre ton événement en stories, en direct et à tes couleurs. Choisis 4 h ou 8 h pour une couverture classique, ou demande un format sur mesure pour un événement qui sort de ces durées.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-start">
 <div style="flex: 1 1 420px; min-width: 0; position: relative">
 <span class="steps-line" aria-hidden="true" style="position: absolute; left: 23px; top: 24px; bottom: 64px; width: 2px; background: linear-gradient(180deg, {{accent}}, rgba(124,140,255,0.25)); transform-origin: top; display: block"></span>
@@ -367,7 +368,7 @@ Voir les stories
 <span style="display: flex; flex-direction: column; gap: 6px; padding-top: 4px; min-width: 0">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: {{accentText}}">Avant</span>
 <span style="font-size: 22px; font-weight: 700; line-height: 1.2">On prépare la couverture</span>
-<span style="font-size: 16px; color: #C9C9C9">Programme, horaires et identité visuelle : on définit ensemble les moments à raconter.</span>
+<span style="font-size: 16px; color: #3A3A3A">Programme, horaires et identité visuelle : on définit ensemble les moments à raconter.</span>
 </span>
 </li>
 <li class="step" style="position: relative; display: flex; gap: 20px; padding-bottom: 40px">
@@ -375,7 +376,7 @@ Voir les stories
 <span style="display: flex; flex-direction: column; gap: 6px; padding-top: 4px; min-width: 0">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: {{accentText}}">Le jour J</span>
 <span style="font-size: 22px; font-weight: 700; line-height: 1.2">Les stories en direct</span>
-<span style="font-size: 16px; color: #C9C9C9">Je capte les temps forts et les publie au fil de l’événement, à tes couleurs.</span>
+<span style="font-size: 16px; color: #3A3A3A">Je capte les temps forts et les publie au fil de l’événement, à tes couleurs.</span>
 </span>
 </li>
 <li class="step" style="position: relative; display: flex; gap: 20px; padding-bottom: 40px">
@@ -383,15 +384,15 @@ Voir les stories
 <span style="display: flex; flex-direction: column; gap: 6px; padding-top: 4px; min-width: 0">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: {{accentText}}">Forfait</span>
 <span style="font-size: 22px; font-weight: 700; line-height: 1.2">Tu choisis ton forfait</span>
-<span style="font-size: 16px; color: #C9C9C9">Choisis 4 h, 8 h ou un format sur mesure. Toute heure au-delà du forfait est facturée 40 €.</span>
+<span style="font-size: 16px; color: #3A3A3A">Choisis 4 h, 8 h ou un format sur mesure. Toute heure au-delà du forfait est facturée 40 €.</span>
 </span>
 </li>
 </ol>
-<p class="step" style="margin: 0 0 0 68px; font-size: 15px; color: #C9C9C9">Basketteur moi-même, je sais où se passent les moments forts, et je suis là quand ils arrivent.</p>
+<p class="step" style="margin: 0 0 0 68px; font-size: 15px; color: #3A3A3A">Basketteur moi-même, je sais où se passent les moments forts, et je suis là quand ils arrivent.</p>
 </div>
 <div class="offer-cards" style="flex: 1 1 600px; min-width: 0; max-width: 760px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px">
 <div class="offer-card" style="min-width: 0; position: relative; border-radius: 24px; padding: 2px; background: linear-gradient(140deg, {{accent}} 0%, rgba(124,140,255,0.35) 45%, rgba(255,255,255,0.12) 100%)">
-<div style="height: 100%; box-sizing: border-box; border-radius: 22px; padding: 26px 24px; background: #0F0F13; display: flex; flex-direction: column; gap: 18px">
+<div style="height: 100%; box-sizing: border-box; border-radius: 22px; padding: 26px 24px; background: #FAF8F4; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">Demi-journée</span>
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: {{accent}}; color: #FFFFFF">4h</span>
@@ -412,7 +413,7 @@ Voir les stories
 </div>
 </div>
 <div class="offer-card" style="min-width: 0; position: relative; border-radius: 24px; padding: 2px; background: linear-gradient(140deg, {{accent}} 0%, rgba(124,140,255,0.35) 45%, rgba(255,255,255,0.12) 100%)">
-<div style="height: 100%; box-sizing: border-box; border-radius: 22px; padding: 26px 24px; background: #0F0F13; display: flex; flex-direction: column; gap: 18px">
+<div style="height: 100%; box-sizing: border-box; border-radius: 22px; padding: 26px 24px; background: #FAF8F4; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">Journée complète</span>
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: {{accent}}; color: #FFFFFF">8h</span>
@@ -433,16 +434,16 @@ Voir les stories
 </div>
 </div>
 <div class="offer-card" style="grid-column: 1 / -1; min-width: 0; position: relative; border-radius: 24px; padding: 2px; background: linear-gradient(140deg, {{accent}} 0%, rgba(124,140,255,0.35) 45%, rgba(255,255,255,0.12) 100%)">
-<div style="box-sizing: border-box; border-radius: 22px; padding: 26px 24px; background: #0F0F13; color: #F2EEE6; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<div style="box-sizing: border-box; border-radius: 22px; padding: 26px 24px; background: #FAF8F4; color: #121212; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
 <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">Format sur mesure</span>
-<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: rgba(124,140,255,0.16); color: {{accentText}}">Selon ton projet</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: rgba(31,23,224,0.1); color: {{accent}}">Selon ton projet</span>
 </div>
 <p style="margin: 0; max-width: 560px; font-size: 15px; line-height: 1.65; color: inherit">Ton événement dépasse 8 h, se déroule sur plusieurs jours ou demande plusieurs contenus ? On construit une couverture adaptée : stories en direct, interviews, ou Reel récapitulatif.</p>
 </div>
 <div style="flex: 0 1 260px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: {{accentText}}">Tarif défini après échange</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">Tarif défini après échange</span>
 <span style="font-size: 13px; opacity: .72">Durée et contenus précisés ensemble, sans estimation automatique.</span>
 <a href="#contact" class="cta-main" onClick="{{chooseCustom}}" style="text-decoration: none; background: {{accent}}; color: #FFFFFF; font-weight: 700; font-size: 16px; min-height: 54px; padding: 0 22px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: 10px">Parler de mon projet <span aria-hidden="true">→</span></a>
 </div>
@@ -454,32 +455,32 @@ Voir les stories
 <!-- CONTACT -->
 <section id="contact">
 <div class="sec-in" style="max-width: 1240px; margin: 0 auto; padding: 72px clamp(16px, 3vw, 40px) 96px">
-<p style="margin: 0 0 16px; font-size: 18px; color: #C9C9C9">Des contenus pensés pour valoriser ton image. Envie de collaborer ?</p>
+<p style="margin: 0 0 16px; font-size: 18px; color: #3A3A3A">Des contenus pensés pour valoriser ton image. Envie de collaborer ?</p>
 <div style="display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start">
 <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
 <h2 class="title-reveal contact-big" style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(56px, 7.5vw, 120px); line-height: 0.9; text-transform: uppercase">Je couvre<br>ton event ?</h2>
-<p style="margin: 0; max-width: 440px; font-size: 17px; color: #C9C9C9">Remplis ces quelques infos : ta demande s'ouvre dans WhatsApp, prête à m'être envoyée. Je te réponds directement là-bas.</p>
+<p style="margin: 0; max-width: 440px; font-size: 17px; color: #3A3A3A">Remplis ces quelques infos : ta demande s'ouvre dans WhatsApp, prête à m'être envoyée. Je te réponds directement là-bas.</p>
 </div>
-<form id="wa-form" onSubmit="{{sendWa}}" class="reveal" style="flex: 1 1 420px; min-width: 0; max-width: 560px; box-sizing: border-box; padding: 28px; border-radius: 24px; background: #0F0F13; border: 1px solid rgba(255,255,255,0.12); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
-<label for="wa-type" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Type d’événement<select id="wa-type" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: dark"><option value="">Choisir…</option><option>Tournoi</option><option>Match</option><option>Course</option><option>Soirée / lifestyle</option><option>Lancement de marque</option><option>Autre</option></select></label>
-<label for="wa-date" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Date<input id="wa-date" type="date" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: dark"></label>
-<label for="wa-formule" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Forfait souhaité<select id="wa-formule" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color-scheme: dark; border-radius: 12px; padding: 0 14px; min-height: 50px"><option value="">Choisir une formule…</option><option value="4h">Demi-journée · 4 h — 150 €</option><option value="8h">Journée complète · 8 h — 250 €</option><option value="sur-mesure">Format sur mesure — à définir ensemble</option></select></label>
-<label for="wa-extra" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Durée estimée ou heures en plus · facultatif<input id="wa-extra" type="number" min="0" step="1" placeholder="0" inputmode="numeric" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: dark"></label>
-<label for="wa-lieu" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Lieu<input id="wa-lieu" type="text" placeholder="Ex. Paris 18e, Clichy Hall" autocomplete="address-level2" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: dark"></label>
-<label for="wa-nom" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Ton nom / organisation<input id="wa-nom" type="text" placeholder="Ex. Club de Charenton" autocomplete="organization" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: dark"></label>
-<label for="wa-msg" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Ton projet en quelques mots<textarea id="wa-msg" rows="3" placeholder="Ce que tu imagines, tes partenaires à mettre en avant…" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: dark; padding: 12px 14px; resize: vertical"></textarea></label>
+<form id="wa-form" onSubmit="{{sendWa}}" class="reveal" style="flex: 1 1 420px; min-width: 0; max-width: 560px; box-sizing: border-box; padding: 28px; border-radius: 24px; background: #FAF8F4; border: 1px solid rgba(18,18,18,0.12); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+<label for="wa-type" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Type d’événement<select id="wa-type" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"><option value="">Choisir…</option><option>Tournoi</option><option>Match</option><option>Course</option><option>Soirée / lifestyle</option><option>Lancement de marque</option><option>Autre</option></select></label>
+<label for="wa-date" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Date<input id="wa-date" type="date" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-formule" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Forfait souhaité<select id="wa-formule" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); color-scheme: light; border-radius: 12px; padding: 0 14px; min-height: 50px"><option value="">Choisir une formule…</option><option value="4h">Demi-journée · 4 h — 150 €</option><option value="8h">Journée complète · 8 h — 250 €</option><option value="sur-mesure">Format sur mesure — à définir ensemble</option></select></label>
+<label for="wa-extra" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Durée estimée ou heures en plus · facultatif<input id="wa-extra" type="number" min="0" step="1" placeholder="0" inputmode="numeric" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-lieu" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Lieu<input id="wa-lieu" type="text" placeholder="Ex. Paris 18e, Clichy Hall" autocomplete="address-level2" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-nom" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Ton nom / organisation<input id="wa-nom" type="text" placeholder="Ex. Club de Charenton" autocomplete="organization" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
+<label for="wa-msg" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Ton projet en quelques mots<textarea id="wa-msg" rows="3" placeholder="Ce que tu imagines, tes partenaires à mettre en avant…" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light; padding: 12px 14px; resize: vertical"></textarea></label>
 <sc-if value="{{waErr}}" hint-placeholder-val="{{false}}">
 <p role="alert" style="grid-column: 1 / -1; margin: -4px 0 0; font-size: 14px; color: #FF8A80">Indique un type d’événement, choisis un forfait ou décris ton projet.</p>
 </sc-if>
 <button type="submit" class="wa-send" style="grid-column: 1 / -1; font: inherit; cursor: pointer; border: none; border-radius: 999px; min-height: 56px; background: #25D366; color: #06210F; font-weight: 700; font-size: 17px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 14px 30px rgba(37,211,102,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>Envoyer sur WhatsApp</button>
-<span style="grid-column: 1 / -1; font-size: 13px; color: #9A9A9A; text-align: center">Ça ouvre WhatsApp avec ton message déjà rédigé : il ne reste qu’à appuyer sur Envoyer.</span>
+<span style="grid-column: 1 / -1; font-size: 13px; color: #5E5A52; text-align: center">Ça ouvre WhatsApp avec ton message déjà rédigé : il ne reste qu’à appuyer sur Envoyer.</span>
 </form>
 </div>
 </div>
 </section>
 
-<footer style="border-top: 1px solid rgba(255,255,255,0.12)">
-<div style="max-width: 1240px; margin: 0 auto; padding: 24px clamp(16px, 3vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8A8A">
+<footer style="border-top: 1px solid rgba(18,18,18,0.12)">
+<div style="max-width: 1240px; margin: 0 auto; padding: 24px clamp(16px, 3vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5E5A52">
 <span>© 2026 SHOTBY12</span>
 <span>Création de contenu sportif et digital</span>
 </div>
@@ -490,7 +491,7 @@ Voir les stories
 </sc-if>
 <!-- LECTEUR PLEIN ÉCRAN (mur et formats) -->
 <sc-if value="{{modalOpen}}" hint-placeholder-val="{{false}}">
-<div role="dialog" aria-modal="true" aria-label="Stories {{current.name}}" style="position: fixed; inset: 0; z-index: 50; background: rgba(5,5,5,0.92); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box">
+<div role="dialog" aria-modal="true" aria-label="Stories {{current.name}}" style="position: fixed; inset: 0; z-index: 50; background: rgba(18,18,18,0.9); color: #FFFFFF; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box">
 <button type="button" aria-label="Fermer" onClick="{{closeModal}}" style="position: absolute; inset: 0; background: none; border: none; cursor: default"></button>
 <div class="modal-in" style="position: relative; height: min(88vh, 780px); max-width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: {{current.bg}}; border: 3px solid #222226; transition: background .4s ease">
 <sc-if value="{{modalVid}}" hint-placeholder-val="{{false}}">
@@ -727,8 +728,8 @@ desc: f.desc,
 short: events[f.ev].short,
 bg: events[f.ev].bg,
 open: () => openModal(f.ev),
-color: f.ev === ev && !this.state.modal ? '#FFFFFF' : '#5A5A5A',
-subColor: f.ev === ev && !this.state.modal ? '#7C8CFF' : '#5A5A5A'
+color: f.ev === ev && !this.state.modal ? '#121212' : '#B9B5AC',
+subColor: f.ev === ev && !this.state.modal ? accent : '#B9B5AC'
 }));
 const hw = this.state.hw;
 // Formats par événement : d'après ce qu'on a vu sur Instagram, à confirmer avec lui
@@ -743,7 +744,7 @@ const ftList = [
 { label: 'Partenaires mis en avant', ev: [12, 11, 1] },
 { label: 'Récaps stylisés', ev: [4, 8, 14] }
 ];
-const chip = (label, on, pick) => ({ label: label, on: on ? 'true' : 'false', pick: pick, bg: on ? accent : 'transparent', border: on ? accent : 'rgba(255,255,255,0.2)', color: on ? '#FFFFFF' : '#C9C9C9' });
+const chip = (label, on, pick) => ({ label: label, on: on ? 'true' : 'false', pick: pick, bg: on ? accent : 'transparent', border: on ? accent : 'rgba(18,18,18,0.2)', color: on ? '#FFFFFF' : '#3A3A3A' });
 const formatTags = [chip('Tous', ft < 0, () => this.setState({ ft: -1 }))].concat(ftList.map((x, k) => chip(x.label, ft === k, () => this.setState({ ft: ft === k ? -1 : k }))));
 const filterInfo = ft < 0 ? 'Les ' + events.length + ' événements.' : ftList[ft].ev.length + (ftList[ft].ev.length > 1 ? ' événements' : ' événement') + ' avec « ' + ftList[ft].label + ' ».';
 const wall = events.map((e, i) => ({
@@ -777,7 +778,7 @@ const uniOrder = ['Basket', 'Course', 'Foot', 'Lifestyle', 'Marque', 'Culture'];
 const uniCount = {};
 events.forEach((e) => e.tags.split(' · ').forEach((u) => { uniCount[u] = (uniCount[u] || 0) + 1; }));
 const uf = this.state.uf;
-const uniChip = (label, on, pick) => ({ label: label, on: on ? 'true' : 'false', pick: pick, bg: on ? accent : 'transparent', border: on ? accent : 'rgba(255,255,255,0.12)', color: on ? '#FFFFFF' : '#C9C9C9' });
+const uniChip = (label, on, pick) => ({ label: label, on: on ? 'true' : 'false', pick: pick, bg: on ? accent : 'transparent', border: on ? accent : 'rgba(18,18,18,0.12)', color: on ? '#FFFFFF' : '#3A3A3A' });
 const uniList = uniOrder.filter((u) => uniCount[u]);
 const uniTags = [uniChip('Tous', !uf, () => this.setState({ uf: '' }))].concat(uniList.map((u) => uniChip(u, uf === u, () => this.setState({ uf: uf === u ? '' : u }))));
 const inUni = (e) => !uf || e.tags.split(' · ').indexOf(uf) >= 0;
@@ -795,13 +796,13 @@ const igPick = this.state.igPick;
 const highlights = events.map((e, i) => ({ isFeat: featSet.indexOf(i) >= 0, go: () => pickHl(i), label: featSet.indexOf(i) >= 0 ? 'Voir le projet ' + e.name : e.name + ' : à voir dans mes stories à la une sur Instagram', op: inUni(e) ? '1' : '0.18', filt: inUni(e) ? 'none' : 'grayscale(1)', tr: inUni(e) ? (uf ? 'scale(1.06)' : 'none') : 'scale(0.86)', name: e.short, uni: e.uni, bg: i === 7 || i === 13 ? '#000000' : i === 14 ? '#FFFFFF' : e.bg, ringBg: 'linear-gradient(135deg, ' + accent + ' 0%, #7C8CFF 100%)', imgFit: [7, 13, 14].indexOf(i) >= 0 ? 'contain' : 'cover', imgScale: i === 5 ? 'scale(1.3)' : i === 7 ? 'scale(0.9)' : i === 10 ? 'scale(1.3)' : 'none', hasPoster: !!(this.ICO[i] || this.POS[i]), noPoster: !(this.ICO[i] || this.POS[i]), poster: this.ICO[i] || (this.POS[i] ? this.POS[i][0] : '') })).filter((h, i) => i !== 11);
 const univers = ['Basket', 'Foot', 'Course', 'Gaming', 'Lifestyle', 'Culture'];
 const refs = ['Bananacut', 'All Parisian Games', 'Adidas', 'Jordan', 'Storm', 'Secare × Playin\' Paris'];
-const ticker = univers.map((u) => ({ label: u, color: '#FFFFFF' }))
+const ticker = univers.map((u) => ({ label: u, color: '#121212' }))
 .concat([{ label: '■', color: accent }])
-.concat(refs.map((r) => ({ label: r, color: '#7A7A7A' })))
+.concat(refs.map((r) => ({ label: r, color: '#8A8478' })))
 .concat([{ label: '■', color: accent }]);
 return {
 accent: accent,
-accentText: '#7C8CFF',
+accentText: accent,
 ticker: ticker,
 eventCount: highlights.length,
 featured: featured,
@@ -857,7 +858,7 @@ hint: this.state.paused ? 'En pause — relâche pour reprendre' : 'Garde le doi
 }
 }
 </script>
-<a class="theme-toggle" href="clair.html" style="background:#F2EEE6;color:#121212" aria-label="Passer à la version claire">◐ Version claire</a>
+<a class="theme-toggle" href="sombre.html" style="background:#121212;color:#F2EEE6" aria-label="Passer à la version sombre">◐ Version sombre</a>
 <script>
 (function(){var k='sb12-scroll';try{var y=sessionStorage.getItem(k);if(y!==null){sessionStorage.removeItem(k);var r=parseFloat(y);var go=function(){document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,r*(document.documentElement.scrollHeight-innerHeight));};setTimeout(go,400);setTimeout(go,1200);}}catch(e){}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.theme-toggle');if(!a)return;try{var h=document.documentElement.scrollHeight-innerHeight;sessionStorage.setItem(k,h>0?scrollY/h:0);}catch(err){}});})();

@@ -298,14 +298,14 @@ Voir les stories
 <div class="hl-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 28px 16px">
 <sc-for list="{{highlights}}" as="h" hint-placeholder-count="15">
 <button type="button" class="hl-item" onClick="{{h.go}}" aria-label="{{h.label}}" style="background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; opacity: {{h.op}}; filter: {{h.filt}}; transform: {{h.tr}}; transition: opacity .4s ease, filter .4s ease, transform .45s cubic-bezier(.2,.7,.2,1); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; min-width: 0">
-<span class="hl-ring" style="position: relative; width: 88px; height: 88px; border-radius: 999px; padding: 3px; box-sizing: border-box; background: linear-gradient(135deg, {{accent}} 0%, #7C8CFF 100%); display: block">
+<span class="hl-ring" style="position: relative; width: 88px; height: 88px; border-radius: 999px; padding: 3px; box-sizing: border-box; background: {{h.ringBg}}; display: block">
 <sc-if value="{{h.isFeat}}" hint-placeholder-val="{{false}}">
 <span aria-hidden="true" style="position: absolute; right: -2px; bottom: -2px; z-index: 2; width: 26px; height: 26px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; border: 2px solid #F2EEE6; display: flex; align-items: center; justify-content: center; padding-left: 2px; box-sizing: border-box"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg></span>
 </sc-if>
 <span style="background: #F2EEE6; padding: 3px; width: 100%; height: 100%; box-sizing: border-box; border-radius: 999px; display: block">
 <span style="position: relative; width: 100%; height: 100%; border-radius: 999px; overflow: hidden; background: {{h.bg}}; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Anton', sans-serif; font-size: 12px; line-height: 1.05; text-transform: uppercase; text-align: center; overflow-wrap: anywhere; padding: 8px; box-sizing: border-box">
 <sc-if value="{{h.hasPoster}}" hint-placeholder-val="{{false}}">
-<img src="{{h.poster}}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<img src="{{h.poster}}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{h.imgFit}}; object-position: center">
 </sc-if>
 <sc-if value="{{h.noPoster}}" hint-placeholder-val="{{true}}">
 <span>{{h.name}}</span>
@@ -535,7 +535,7 @@ this.state = { ev: 3, st: 0, p: 0, paused: false, rx: 0, ry: 0, modal: false, mu
 this.COUNT = 3;
 this.VID = { 1: ["media/skut-1.mp4","media/skut-2.mp4","media/skut-3.mp4","media/skut-4.mp4"], 2: ['media/reprise-1.mp4', 'media/reprise-2.mp4', 'media/reprise-3.mp4', 'media/reprise-4.mp4', 'media/reprise-5.mp4'], 3: ['media/arc04-1.mp4', 'media/arc04-2.mp4', 'media/arc04-3.mp4', 'media/arc04-4.mp4', 'media/arc04-5.mp4', 'media/arc04-6.mp4', 'media/arc04-7.mp4', 'media/arc04-8.mp4'], 4: ['media/apg-1.mp4', 'media/apg-2.mp4', 'media/apg-3.mp4', 'media/apg-4.mp4', 'media/apg-5.mp4'], 5: ["media/storm-1.mp4","media/storm-2.mp4","media/storm-3.mp4","media/storm-4.mp4","media/storm-5.mp4","media/storm-6.mp4","media/storm-7.mp4","media/storm-8.mp4","media/storm-9.mp4"], 10: ["media/parisbasket-1.mp4","media/parisbasket-2.mp4","media/parisbasket-3.mp4","media/parisbasket-4.mp4","media/parisbasket-5.mp4","media/parisbasket-6.mp4","media/parisbasket-7.mp4"], 12: ["media/unlocked-1.mp4","media/unlocked-2.mp4","media/unlocked-3.mp4","media/unlocked-4.mp4","media/unlocked-5.mp4","media/unlocked-6.mp4","media/unlocked-7.mp4","media/unlocked-8.mp4","media/unlocked-9.mp4","media/unlocked-10.mp4"] };
 this.ICO = { 0: 'media/ico-charenton.jpg', 1: 'media/ico-skut.jpg', 2: 'media/ico-reprise.jpg', 3: 'media/ico-bananacut.jpg', 8: 'media/ico-bananacut.jpg', 4: 'media/ico-apg.jpg', 5: 'media/ico-storm.jpg', 6: 'media/ico-jemh.jpg', 7: 'media/ico-nike.svg', 10: 'media/ico-african-all-celebration.jpg', 12: 'media/ico-unlocked.jpg' };
-this.POS = { 2: ['media/reprise-1.jpg', 'media/reprise-2.jpg', 'media/reprise-3.jpg', 'media/reprise-4.jpg', 'media/reprise-5.jpg'], 4: ['media/apg-1.jpg', 'media/apg-2.jpg', 'media/apg-3.jpg', 'media/apg-4.jpg', 'media/apg-5.jpg'], 3: ['media/arc04-1.jpg', 'media/arc04-2.jpg', 'media/arc04-3.jpg', 'media/arc04-4.jpg', 'media/arc04-5.jpg', 'media/arc04-6.jpg', 'media/arc04-7.jpg', 'media/arc04-8.jpg'] , 1: ['media/ico-skut.jpg', 'media/ico-skut.jpg', 'media/ico-skut.jpg', 'media/ico-skut.jpg'], 5: ['media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg', 'media/ico-storm.jpg'], 10: ['media/ico-parisbasket.jpg', 'media/ico-parisbasket.jpg', 'media/ico-parisbasket.jpg', 'media/ico-parisbasket.jpg', 'media/ico-parisbasket.jpg', 'media/ico-parisbasket.jpg', 'media/ico-parisbasket.jpg'], 12: ['media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg', 'media/ico-unlocked.jpg'] };
+this.POS = { 2: ['media/reprise-1.jpg', 'media/reprise-2.jpg', 'media/reprise-3.jpg', 'media/reprise-4.jpg', 'media/reprise-5.jpg'], 4: ['media/apg-1.jpg', 'media/apg-2.jpg', 'media/apg-3.jpg', 'media/apg-4.jpg', 'media/apg-5.jpg'], 3: ['media/arc04-1.jpg', 'media/arc04-2.jpg', 'media/arc04-3.jpg', 'media/arc04-4.jpg', 'media/arc04-5.jpg', 'media/arc04-6.jpg', 'media/arc04-7.jpg', 'media/arc04-8.jpg']  };
 this.N = 15;
 this.pressAt = 0;
 this.ticking = false;
@@ -665,7 +665,7 @@ const closeModal = () => this.setState({ modal: false, st: 0, p: 0 });
 const rx = this.state.rx, ry = this.state.ry;
 const vids = this.VID[ev];
 const curVid = vids ? vids[Math.min(st, vids.length - 1)] : '';
-const curPoster = vids ? this.POS[ev][Math.min(st, vids.length - 1)] : '';
+const curPoster = vids && this.POS[ev] ? this.POS[ev][Math.min(st, vids.length - 1)] : '';
 const vidTime = (e) => { const v = e.currentTarget; if (v.duration) this.setState({ p: Math.min(100, (v.currentTime / v.duration) * 100) }); };
 const vidEnd = () => this.advance();
 const wallTime = (e) => { const v = e.currentTarget; if (v.duration) this.setState({ hp: Math.min(100, (v.currentTime / v.duration) * 100) }); };
@@ -780,7 +780,7 @@ clearTimeout(this.igTimer);
 this.setState({ igPick: -1 }, () => { this.igTimer = setTimeout(() => { this.setState({ igPick: i }); this.igTimer = setTimeout(() => this.setState({ igPick: -1 }), 4500); }, 40); });
 };
 const igPick = this.state.igPick;
-const highlights = events.map((e, i) => ({ isFeat: featSet.indexOf(i) >= 0, go: () => pickHl(i), label: featSet.indexOf(i) >= 0 ? 'Voir le projet ' + e.name : e.name + ' : à voir dans mes stories à la une sur Instagram', op: inUni(e) ? '1' : '0.18', filt: inUni(e) ? 'none' : 'grayscale(1)', tr: inUni(e) ? (uf ? 'scale(1.06)' : 'none') : 'scale(0.86)', name: e.short, uni: e.uni, bg: e.bg, hasPoster: !!(this.ICO[i] || this.POS[i]), noPoster: !(this.ICO[i] || this.POS[i]), poster: this.ICO[i] || (this.POS[i] ? this.POS[i][0] : '') }));
+const highlights = events.map((e, i) => ({ isFeat: featSet.indexOf(i) >= 0, go: () => pickHl(i), label: featSet.indexOf(i) >= 0 ? 'Voir le projet ' + e.name : e.name + ' : à voir dans mes stories à la une sur Instagram', op: inUni(e) ? '1' : '0.18', filt: inUni(e) ? 'none' : 'grayscale(1)', tr: inUni(e) ? (uf ? 'scale(1.06)' : 'none') : 'scale(0.86)', name: e.short, uni: e.uni, bg: i === 7 ? '#000000' : e.bg, ringBg: i === 7 ? '#000000' : 'linear-gradient(135deg, ' + accent + ' 0%, #7C8CFF 100%)', imgFit: i === 7 ? 'contain' : 'cover', hasPoster: !!(this.ICO[i] || this.POS[i]), noPoster: !(this.ICO[i] || this.POS[i]), poster: this.ICO[i] || (this.POS[i] ? this.POS[i][0] : '') }));
 const univers = ['Basket', 'Foot', 'Course', 'Gaming', 'Lifestyle', 'Culture'];
 const refs = ['Bananacut', 'All Parisian Games', 'Adidas', 'Jordan', 'Storm', 'Secare × Playin\' Paris'];
 const ticker = univers.map((u) => ({ label: u, color: '#121212' }))
@@ -803,7 +803,7 @@ isStory: !vids && st !== 0,
 vidSrc: curVid,
 vidPoster: curPoster,
 phoneVid: !!vids && !this.state.modal,
-phonePoster: !!vids && this.state.modal,
+phonePoster: !!vids && !!curPoster && this.state.modal,
 modalVid: !!vids && this.state.modal,
 vidTime: vidTime,
 vidEnd: vidEnd,

@@ -858,7 +858,7 @@ hint: this.state.paused ? 'En pause — relâche pour reprendre' : 'Garde le doi
 }
 }
 </script>
-<a class="theme-toggle" href="index.html" style="background:#121212;color:#F2EEE6" aria-label="Passer à la version sombre">◐ Version sombre</a>
+<a class="theme-toggle" href="sombre.html" style="background:#121212;color:#F2EEE6" aria-label="Passer à la version sombre">◐ Version sombre</a>
 <script>
 (function(){var k='sb12-scroll';try{var y=sessionStorage.getItem(k);if(y!==null){sessionStorage.removeItem(k);var r=parseFloat(y);var go=function(){document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,r*(document.documentElement.scrollHeight-innerHeight));};setTimeout(go,400);setTimeout(go,1200);}}catch(e){}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.theme-toggle');if(!a)return;try{var h=document.documentElement.scrollHeight-innerHeight;sessionStorage.setItem(k,h>0?scrollY/h:0);}catch(err){}});})();

@@ -2,8 +2,9 @@
 
 Site vitrine de SHOTBY12, vidéaste et créateur de contenu sportif. Version de travail, non indexée par les moteurs de recherche.
 
-- `index.html` : version sombre
-- `clair.html` : version claire (bouton en bas à gauche pour passer de l'une à l'autre)
+- `index.html` : page d’accueil en version claire
+- `clair.html` : accès direct à la version claire
+- `sombre.html` : version noire (bouton en bas à gauche pour changer de thème)
 - `media/` : stories, reels 12's POV, icônes et photo (vidéos compressées en 540p / 720p)
 - `support.js` : moteur d'affichage des pages
 

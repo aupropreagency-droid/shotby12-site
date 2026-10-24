@@ -91,7 +91,8 @@ h2.title-reveal{font-size:44px !important}
 .m-ticker > div{font-size:22px !important;gap:24px !important;padding-right:24px !important}
 .pov-grid{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
 .pov-grid span{font-size:11px !important}
-.about-photo{max-width:220px !important}
+.about-photo{flex:0 0 100% !important;width:100% !important;max-width:none !important;aspect-ratio:4 / 5 !important}
+@media (prefers-reduced-motion: reduce){.photo-reveal{animation:none !important;clip-path:none !important;transform:none !important}}
 .hl-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:24px 8px !important}
 .hl-ring{width:80px !important;height:80px !important}
 .w-name{font-size:14px !important}
@@ -111,8 +112,8 @@ h2.title-reveal{font-size:44px !important}
 .step:nth-child(2) .step-dot{animation-delay:.8s}
 .step:nth-child(3) .step-dot{animation-delay:1.6s}
 @supports (animation-timeline: view()){
-@keyframes photoReveal{from{clip-path:inset(100% 0 0 0 round 18px);transform:scale(1.12)}to{clip-path:inset(0 0 0 0 round 18px);transform:none}}
-.photo-reveal{animation:photoReveal linear both;animation-timeline:view();animation-range:entry 5% cover 45%}
+@keyframes photoReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.photo-reveal{animation:photoReveal linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
 @keyframes wordOn{from{opacity:.2}to{opacity:1}}
 .about-intro{view-timeline-name:--about}
 .about-intro .w{animation:wordOn linear both;animation-timeline:--about}
@@ -704,7 +705,7 @@ if (offer) lines.push('• Budget estimatif : ' + (offer.price + extra * 40) + '
 if (lieu) lines.push('• Lieu : ' + lieu);
 if (nom) lines.push('• Organisateur : ' + nom);
 if (msg) { lines.push(''); lines.push(msg); }
-const url = 'https://wa.me/33659793587?text=' + encodeURIComponent(lines.join('\n'));
+const url = 'https://wa.me/33786279971?text=' + encodeURIComponent(lines.join('\n'));
 this.setState({ waErr: false });
 const w = window.open(url, '_blank');
 if (w) { try { w.opener = null; } catch (err) {} } else { window.location.href = url; }

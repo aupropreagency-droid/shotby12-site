@@ -1,6 +1,6 @@
-# SHOTBY12 — site (préproduction)
+# SHOTBY12 — site officiel
 
-Site vitrine de SHOTBY12, vidéaste et créateur de contenu sportif. Version de travail, non indexée par les moteurs de recherche.
+Site vitrine de SHOTBY12, vidéaste et créateur de contenu sportif, en ligne sur https://shotby12.fr (indexable par les moteurs de recherche).
 
 - `index.html` : page d’accueil en version claire
 - `clair.html` : accès direct à la version claire
@@ -11,4 +11,4 @@ Site vitrine de SHOTBY12, vidéaste et créateur de contenu sportif. Version de 
 ## Déploiement Cloudflare Pages
 Projet relié à ce dépôt, sans commande de build, dossier de sortie : `/` (racine). Chaque push sur `main` republie le site.
 
-Avant la mise en ligne définitive : retirer `robots.txt`, la balise `noindex` et l'en-tête `X-Robots-Tag` dans `_headers`, remplacer les contenus entre crochets.
+Indexation : `robots.txt` autorise les moteurs et pointe vers `sitemap.xml` ; chaque page déclare https://shotby12.fr/ comme adresse canonique.

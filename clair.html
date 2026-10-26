@@ -384,7 +384,7 @@ Voir les stories
 <span style="display: flex; flex-direction: column; gap: 6px; padding-top: 4px; min-width: 0">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: {{accentText}}">Forfait</span>
 <span style="font-size: 22px; font-weight: 700; line-height: 1.2">Tu choisis ton forfait</span>
-<span style="font-size: 16px; color: #3A3A3A">Choisis 4 h, 8 h ou un format sur mesure. Toute heure au-delà du forfait est facturée 40 €.</span>
+<span style="font-size: 16px; color: #3A3A3A">Choisis 4 h, 8 h ou un format sur mesure. Toute heure au-delà du forfait est facturée 25 €.</span>
 </span>
 </li>
 </ol>
@@ -405,11 +405,11 @@ Voir les stories
 </ul>
 <div style="margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(128,128,128,0.24); display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: {{accentText}}">Tarif du forfait</span>
-<span style="font-family: 'Anton', sans-serif; font-size: 58px; line-height: 1; display: flex; align-items: baseline; gap: 7px">150 €</span>
+<span style="font-family: 'Anton', sans-serif; font-size: 58px; line-height: 1; display: flex; align-items: baseline; gap: 7px">100 €</span>
 <span style="font-size: 13px; opacity: .72">Pour 4 heures de couverture</span>
 </div>
 <a href="#contact" class="cta-main" onClick="{{chooseHalf}}" style="text-decoration: none; background: {{accent}}; color: #FFFFFF; font-weight: 700; font-size: 16px; min-height: 54px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 10px">Choisir la demi-journée <span aria-hidden="true">→</span></a>
-<span style="font-size: 12px; opacity: .68; text-align: center">Heure supplémentaire : 40 € / h</span>
+<span style="font-size: 12px; opacity: .68; text-align: center">Heure supplémentaire : 25 € / h</span>
 </div>
 </div>
 <div class="offer-card" style="min-width: 0; position: relative; border-radius: 24px; padding: 2px; background: linear-gradient(140deg, {{accent}} 0%, rgba(124,140,255,0.35) 45%, rgba(255,255,255,0.12) 100%)">
@@ -426,11 +426,11 @@ Voir les stories
 </ul>
 <div style="margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(128,128,128,0.24); display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: {{accentText}}">Tarif du forfait</span>
-<span style="font-family: 'Anton', sans-serif; font-size: 58px; line-height: 1; display: flex; align-items: baseline; gap: 7px">250 €</span>
+<span style="font-family: 'Anton', sans-serif; font-size: 58px; line-height: 1; display: flex; align-items: baseline; gap: 7px">200 €</span>
 <span style="font-size: 13px; opacity: .72">Pour 8 heures de couverture</span>
 </div>
 <a href="#contact" class="cta-main" onClick="{{chooseFull}}" style="text-decoration: none; background: {{accent}}; color: #FFFFFF; font-weight: 700; font-size: 16px; min-height: 54px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 10px">Choisir la journée complète <span aria-hidden="true">→</span></a>
-<span style="font-size: 12px; opacity: .68; text-align: center">Heure supplémentaire : 40 € / h</span>
+<span style="font-size: 12px; opacity: .68; text-align: center">Heure supplémentaire : 25 € / h</span>
 </div>
 </div>
 <div class="offer-card" style="grid-column: 1 / -1; min-width: 0; position: relative; border-radius: 24px; padding: 2px; background: linear-gradient(140deg, {{accent}} 0%, rgba(124,140,255,0.35) 45%, rgba(255,255,255,0.12) 100%)">
@@ -464,7 +464,7 @@ Voir les stories
 <form id="wa-form" onSubmit="{{sendWa}}" class="reveal" style="flex: 1 1 420px; min-width: 0; max-width: 560px; box-sizing: border-box; padding: 28px; border-radius: 24px; background: #FAF8F4; border: 1px solid rgba(18,18,18,0.12); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
 <label for="wa-type" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0; grid-column: 1 / -1">Type d’événement<select id="wa-type" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"><option value="">Choisir…</option><option>Tournoi</option><option>Match</option><option>Course</option><option>Soirée / lifestyle</option><option>Lancement de marque</option><option>Autre</option></select></label>
 <label for="wa-date" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Date<input id="wa-date" type="date" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
-<label for="wa-formule" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Forfait souhaité<select id="wa-formule" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); color-scheme: light; border-radius: 12px; padding: 0 14px; min-height: 50px"><option value="">Choisir une formule…</option><option value="4h">Demi-journée · 4 h — 150 €</option><option value="8h">Journée complète · 8 h — 250 €</option><option value="sur-mesure">Format sur mesure — à définir ensemble</option></select></label>
+<label for="wa-formule" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Forfait souhaité<select id="wa-formule" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); color-scheme: light; border-radius: 12px; padding: 0 14px; min-height: 50px"><option value="">Choisir une formule…</option><option value="4h">Demi-journée · 4 h — 100 €</option><option value="8h">Journée complète · 8 h — 200 €</option><option value="sur-mesure">Format sur mesure — à définir ensemble</option></select></label>
 <label for="wa-extra" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Durée estimée ou heures en plus · facultatif<input id="wa-extra" type="number" min="0" step="1" placeholder="0" inputmode="numeric" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
 <label for="wa-lieu" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Lieu<input id="wa-lieu" type="text" placeholder="Ex. Paris 18e, Clichy Hall" autocomplete="address-level2" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
 <label for="wa-nom" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 0">Ton nom / organisation<input id="wa-nom" type="text" placeholder="Ex. Club de Charenton" autocomplete="organization" style="width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; color: inherit; background: #FFFFFF; border: 1px solid rgba(18,18,18,0.18); border-radius: 12px; padding: 0 14px; min-height: 50px; color-scheme: light"></label>
@@ -692,7 +692,7 @@ const type = g('wa-type'), date = g('wa-date'), formule = g('wa-formule'), lieu 
 const extra = Math.max(0, parseInt(g('wa-extra'), 10) || 0);
 if (!type && !formule && !msg) { this.setState({ waErr: true }); return; }
 let d = date; if (date.length === 10) { const p = date.split('-'); d = p[2] + '/' + p[1] + '/' + p[0]; }
-const offers = { '4h': { label: 'Demi-journée · 4 h', price: 150 }, '8h': { label: 'Journée complète · 8 h', price: 250 } };
+const offers = { '4h': { label: 'Demi-journée · 4 h', price: 100 }, '8h': { label: 'Journée complète · 8 h', price: 200 } };
 const offer = offers[formule];
 const lines = ['Salut SHOTBY12 ! Nouvelle demande via ton site :', ''];
 if (type) lines.push('• Événement : ' + type);
@@ -700,8 +700,8 @@ if (d) lines.push('• Date : ' + d);
 if (offer) lines.push('• Forfait : ' + offer.label + ' — ' + offer.price + ' €');
 else if (formule === 'sur-mesure') lines.push('• Formule : Sur mesure — tarif à définir après échange');
 if (extra > 0 && formule === 'sur-mesure') lines.push('• Durée estimée : environ ' + extra + ' h');
-else if (extra > 0) lines.push('• Heures supplémentaires : ' + extra + ' h × 40 € = ' + (extra * 40) + ' €');
-if (offer) lines.push('• Budget estimatif : ' + (offer.price + extra * 40) + ' €');
+else if (extra > 0) lines.push('• Heures supplémentaires : ' + extra + ' h × 25 € = ' + (extra * 25) + ' €');
+if (offer) lines.push('• Budget estimatif : ' + (offer.price + extra * 25) + ' €');
 if (lieu) lines.push('• Lieu : ' + lieu);
 if (nom) lines.push('• Organisateur : ' + nom);
 if (msg) { lines.push(''); lines.push(msg); }
